@@ -6,43 +6,82 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="30dp"
-        tools:ignore="MissingConstraints">
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button"
-
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            app:icon="@drawable/baseline_person_24"
-            app:iconSize="40dp" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/button2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="20dp"
-            app:icon="@drawable/baseline_location_on_24"
-            app:iconSize="40dp"
-            />
-
-
-    </com.google.android.material.card.MaterialCardView>
-
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="80dp" />
+        tools:layout_editor_absoluteY="80dp" >
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="30dp"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="23dp"
+            tools:layout_editor_absoluteY="33dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="100dp"
+                    android:text="Shivam"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="17dp"
+                android:text="+9170465268"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="32dp"
+                android:text="shivam19@gmail.com"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="48dp"
+                android:text="valsad-396020"/>
+
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button"
+
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="8dp"
+                app:icon="@drawable/baseline_person_24"
+                app:iconSize="30dp"
+                app:iconGravity="start"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_marginLeft="280dp"
+                android:layout_marginTop="8dp"
+                app:icon="@drawable/baseline_location_on_24"
+                app:iconSize="30dp"
+                app:iconGravity="start"/>
+
+
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
