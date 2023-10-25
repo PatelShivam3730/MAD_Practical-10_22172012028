@@ -1,26 +1,69 @@
-package com.example.mad_practical_10_22172012028
+package com.example.mad_practical_10_22172012040
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ListView
+import com.example.mad_practical_10_22172012028.HttpRequest
+import com.example.mad_practical_10_22172012028.Person
+import com.example.mad_practical_10_22172012028.R
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import org.json.JSONArray
+import org.json.JSONException
+import org.json.JSONObject
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var personlistview:ListView
+    private val TAG="MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         var personlistview = findViewById<ListView>(R.id.listview)
+        var btn:FloatingActionButton = findViewById(R.id.floatingActionButton)
+
+        btn.setOnClickListener {
+            Log.i(TAG, "onCreate: before calling function and inside button click")
+            setpersondatatolistview()
+        }
     }
 
-    fun setpersondatatolistview()
-    {
-        personlistview.adapter=PersonAdapter(this, arrayListOf(
-            Person("111","Shivam","Shivampatel19@gnu.ac.in","+917046526862","Valsad",150.64949,5645941.1649),
-            Person("222","jiya","jiyampatel19@gnu.ac.in","+917046526862","Valsad",150.649459,5645941.1649),
-            Person("333","roshan","tadviroshan19@gnu.ac.in","+919864738290","Valsad",150.649449,5645941.1649),
-            Person("444","mukesh","mukeshpatel19@gnu.ac.in","+917046526862","Valsad",150.64949,5645941.1649),
-            Person("555","anil","anilpatel19@gnu.ac.in","+917069226862","Valsad",150.64949,5645941.1649),
-            ))}
+    fun setpersondatatolistview(){
+        CoroutineScope(Dispatchers.IO).launch {
+            try {
+                Log.i(TAG, "setpersondatatolistview: Before requesting network request and waiting")
+                val data = HttpRequest().makeServiceCall(
+                    "https://api.json-generator.com/templates/qjeKFdjkXCdK/data",
+                    "rbn0rerl1k0d3mcwgw7dva2xuwk780z1hxvyvrb1")
+                Log.i(TAG, "setpersondatatolistview: got reply from network:data=$data")
+                withContext(Dispatchers.Main) {
+                    try {
+                        if(data != null)
+                            runOnUiThread{getPersonDetailsFromJson(data)}
+                    } catch (e: Exception) {
+                        e.printStackTrace()
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }}
 
+    private fun getPersonDetailsFromJson(sJson: String?) {
+        val personList = ArrayList<Person>()
+        try {
+            val jsonArray = JSONArray(sJson)
+            for (i in 0 until jsonArray.length()) {
+                val jsonObject = jsonArray[i] as JSONObject
+                val person = Person(jsonObject)
+                personList.add(person)
+            }
+            val listView1 = findViewById<ListView>(R.id.listview)
+            listView1.adapter = PersonAdapter(this, personList)
+        } catch (ee: JSONException) {
+            ee.printStackTrace()
+        }
+    }
 }

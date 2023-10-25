@@ -28,32 +28,36 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"/>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:text="Shivam"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:id="@+id/textView_name"
+                android:text="Shivam"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="17dp"
-                android:text="+9170465268"/>
+                android:text="+917046526862"
+                android:id="@+id/textView_no"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="32dp"
-                android:text="shivam19@gmail.com"/>
+                android:text="shivampatel19@gmail.com"
+                android:id="@+id/textView_email"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="100dp"
                 android:layout_marginTop="48dp"
-                android:text="valsad-396020"/>
+                android:text="Valsad-396020"
+                android:id="@+id/textView_address"/>
 
 
 
