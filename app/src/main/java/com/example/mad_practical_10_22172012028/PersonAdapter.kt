@@ -1,6 +1,5 @@
 package com.example.mad_practical_10_22172012028
 
-import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
@@ -17,7 +16,6 @@ class PersonAdapter(context:Context,val array:ArrayList<Person>):ArrayAdapter<Pe
 
 
 
-    @SuppressLint("MissingInflatedId")
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.person_item,parent,false)
@@ -26,7 +24,7 @@ class PersonAdapter(context:Context,val array:ArrayList<Person>):ArrayAdapter<Pe
         view.findViewById<TextView>(R.id.textView_no).text=person_data.phoneNo
         view.findViewById<TextView>(R.id.textView_email).text=person_data.emailId
         view.findViewById<TextView>(R.id.textView_address).text=person_data.address
-        view.findViewById<MaterialButton>(R.id.btn_autorenew).setOnClickListener {
+        view.findViewById<MaterialButton>(R.id.btn_location).setOnClickListener {
             Intent(parent.context,MapActivity::class.java).putExtra("Object",person_data).apply { context.startActivity(this) }
         }
         return view

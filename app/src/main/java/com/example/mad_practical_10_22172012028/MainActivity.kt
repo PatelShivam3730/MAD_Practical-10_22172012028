@@ -1,9 +1,10 @@
 package com.example.mad_practical_10_22172012028
+
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ListView
-import com.example.mad_practical_10_22172012028.PersonAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -30,19 +31,19 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("SuspiciousIndentation")
     fun setPersonDataToListView(){
      personListView.adapter=PersonAdapter(this,
-        arrayListOf(
-            Person("1", "Shivam","shivampatel@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("2", "Risky","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("3", "jiys","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("4", "Ashish","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-            Person("5", "nilima","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("6", "anil","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("7", "mukesh","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-           Person("8", "shreni","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("9", "hello","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
-             Person("10", "Jadu_female","sujalpatel1882@gmail.com", "9558297717","Bharuch-392001",21.7051,72.9959),
+         arrayListOf(
+             Person("1", "Shivam","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("2", "Risky","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("3", "Jiya","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("4", "Ashish","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("5", "Shreni","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("6", "hello","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("7", "Anil","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("8", "Mukesh","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+             Person("9", "Patel","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
              ))
 
         CoroutineScope(Dispatchers.IO).launch {

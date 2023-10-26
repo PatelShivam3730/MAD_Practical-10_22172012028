@@ -28,6 +28,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_marginStart="15dp"
+                android:drawableTint="@color/white"
                 app:icon="@drawable/baseline_person_24"
                 app:iconGravity="textStart"
                 app:iconSize="30dp"
