@@ -35,15 +35,15 @@ class MainActivity : AppCompatActivity() {
     fun setPersonDataToListView(){
      personListView.adapter=PersonAdapter(this,
          arrayListOf(
-             Person("1", "Shivam","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("2", "Risky","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("3", "Jiya","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("4", "Ashish","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("5", "Shreni","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("6", "hello","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("7", "Anil","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("8", "Mukesh","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
-             Person("9", "Patel","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+//             Person("1", "Shivam","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+  //           Person("2", "Risky","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+    //         Person("3", "Jiya","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+      //       Person("4", "Ashish","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+        //     Person("5", "Shreni","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+          //   Person("6", "hello","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+            // Person("7", "Anil","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+//             Person("8", "Mukesh","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
+  //           Person("9", "Patel","shivampatel@gmail.com", "7046526862","Valsad",21.7051,72.9959),
              ))
 
         CoroutineScope(Dispatchers.IO).launch {
