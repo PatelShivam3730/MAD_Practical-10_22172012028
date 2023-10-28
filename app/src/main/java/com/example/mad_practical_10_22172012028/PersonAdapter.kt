@@ -25,7 +25,7 @@ class PersonAdapter(context:Context,val array:ArrayList<Person>):ArrayAdapter<Pe
         view.findViewById<TextView>(R.id.textView_email).text=person_data.emailId
         view.findViewById<TextView>(R.id.textView_address).text=person_data.address
         view.findViewById<MaterialButton>(R.id.btn_location).setOnClickListener {
-            Intent(parent.context,MapActivity::class.java).putExtra("Object",person_data).apply { context.startActivity(this) }
+            Intent(parent.context,MapsActivity::class.java).putExtra("Object",person_data).apply { context.startActivity(this) }
         }
         return view
     }
